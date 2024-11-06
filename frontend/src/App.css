@@ -1,0 +1,101 @@
+body {
+  background-color: rgb(22, 22, 22);
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+form, .dashboard, .tile-selection, .traffic-upload {
+  padding: 50px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom:50px;
+  max-width: 500px;
+  background-color: #333;
+  border-radius: 8px;
+
+}
+
+input, select, button, textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 4px;
+  border: none;
+}
+
+button {
+  background-color: #1da1f2;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1a91da;
+}
+
+h2, h3 {
+  color: #1da1f2;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}
+
+.dashboard-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.dashboard-buttons button {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  border: none;
+  background-color: #444;
+  cursor: pointer;
+}
+
+.dashboard-buttons button.active {
+  background-color: #1da1f2;
+}
+
+.results {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #444;
+  border-radius: 4px;
+}
+.navigator{
+  padding:30px;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-wrapper{
+  display:flex;
+}
+
+.nav-container{
+  padding:15px;
+  width:150px;
+  margin-right:20px;
+  border-radius: 35px;
+  cursor:pointer;
+  text-align: center;
+  margin:auto;
+  margin-right: 20px;
+  background-color: #1da1f2;
+}
+
+.nav-container Link{
+  color:white;
+  text-decoration: none;
+  margin:auto
+}
