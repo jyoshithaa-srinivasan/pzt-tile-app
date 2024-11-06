@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import TileSelection from './TileSelection';
 import TrafficDataUpload from './FootTrafficDataUpload';
 import CostCalculation from './CostCalculation';
@@ -6,6 +6,13 @@ import '../App.css';
 
 function Dashboard() {
     const [view, setView] = useState('tileSelection');
+    const [userRole, setUserRole] = useState(null);
+
+    // Retrieve user role from localStorage on component mount
+    useEffect(() => {
+        const role = localStorage.getItem('userRole');
+        setUserRole(role);
+    }, []);
 
     return (
         <div className="dashboard">
@@ -14,9 +21,14 @@ function Dashboard() {
                 <button onClick={() => setView('tileSelection')} className={view === 'tileSelection' ? 'active' : ''}>
                     Tile Selection
                 </button>
-                <button onClick={() => setView('trafficData')} className={view === 'trafficData' ? 'active' : ''}>
-                    Traffic Data Upload
-                </button>
+
+                {/* Conditionally render the Traffic Data Upload button for admins only */}
+                {userRole === 'admin' && (
+                    <button onClick={() => setView('trafficData')} className={view === 'trafficData' ? 'active' : ''}>
+                        Traffic Data Upload
+                    </button>
+                )}
+
                 <button onClick={() => setView('costCalculation')} className={view === 'costCalculation' ? 'active' : ''}>
                     Budget and ROI Calculation
                 </button>
