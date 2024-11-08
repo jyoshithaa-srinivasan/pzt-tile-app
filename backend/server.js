@@ -19,7 +19,7 @@ app.use('/pzt/users', authRoutes);
 app.use('/pzt/tiles', tileRoutes);
 app.use('/pzt/calculate-tiles', calculationRoutes);
 app.use('/pzt/cost',calculationCostRoutes);
-app.use('/pzt/', trafficRoutes);
+app.use('/pzt', trafficRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
